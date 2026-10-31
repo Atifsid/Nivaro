@@ -43,3 +43,10 @@ yarn-error.*
 .superpowers/
 ios/
 android/
+
+# AI assistant files
+AGENTS.md
+CLAUDE.md
+.claude/
+docs/superpowers/
+.impeccable/
