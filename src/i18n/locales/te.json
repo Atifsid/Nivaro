@@ -1,0 +1,111 @@
+{
+  "_review": "needs native speaker review",
+  "common": {
+    "save": "సేవ్ చేయండి",
+    "delete": "తొలగించండి",
+    "cancel": "రద్దు",
+    "continue": "కొనసాగించండి",
+    "comingSoon": "త్వరలో వస్తోంది"
+  },
+  "errors": {
+    "amount": {
+      "empty": "మొత్తం నమోదు చేయండి",
+      "invalid": "సరైన మొత్తం నమోదు చేయండి, ఉదా. 1,250.50",
+      "zero": "మొత్తం ₹0 కంటే ఎక్కువ ఉండాలి",
+      "too_large": "ఈ మొత్తం చాలా ఎక్కువ"
+    },
+    "merchant": "ఎవరికి చెల్లించారో నమోదు చేయండి"
+  },
+  "onboarding": {
+    "language": {
+      "title": "మీ భాషను ఎంచుకోండి",
+      "subtitle": "దీనిని ఎప్పుడైనా 'నేను' లో మార్చవచ్చు."
+    },
+    "budget": {
+      "title": "మీ డబ్బు నెల",
+      "paydayLabel": "జీతం వచ్చే రోజు",
+      "paydayHint": "ప్రతి నెలా ఈ రోజున మీ బడ్జెట్ మళ్లీ మొదలవుతుంది.",
+      "budgetLabel": "నెలవారీ బడ్జెట్",
+      "budgetHint": "ఒక నెలలో మీరు ఎంత ఖర్చు చేయాలనుకుంటున్నారు."
+    },
+    "start": {
+      "title": "15 రోజులు Pro, ఉచితం.",
+      "subtitle": "కార్డ్ అవసరం లేదు. అన్నీ అన్‌లాక్.",
+      "cta": "ప్రారంభించండి"
+    }
+  },
+  "tabs": {
+    "home": "హోమ్",
+    "activity": "లావాదేవీలు",
+    "budgets": "బడ్జెట్",
+    "bills": "బిల్లులు",
+    "insights": "నివేదికలు"
+  },
+  "home": {
+    "left": "ఈ నెల మిగిలింది",
+    "leftOf": "{{total}} లో {{left}} మిగిలింది",
+    "over": "బడ్జెట్ కంటే {{amount}} ఎక్కువ",
+    "day": "రోజు {{day}}/{{length}}",
+    "addSpend": "ఖర్చు జోడించండి",
+    "recent": "ఇటీవలివి",
+    "toCategorise": "వర్గం ఎంచుకోవాలి: {{count}}",
+    "empty": "ఇంకా ఖర్చులు లేవు. మొదటి ఖర్చు జోడించండి."
+  },
+  "activity": {
+    "title": "లావాదేవీలు",
+    "uncategorised": "వర్గం ఎంచుకోవాలి",
+    "empty": "ఇక్కడ ఇంకా ఏమీ లేదు."
+  },
+  "tx": {
+    "newTitle": "ఖర్చు జోడించండి",
+    "editTitle": "ఎంట్రీ మార్చండి",
+    "amount": "మొత్తం",
+    "debit": "ఖర్చు చేశారు",
+    "credit": "వచ్చింది",
+    "merchant": "ఎవరికి",
+    "merchantPlaceholder": "దుకాణం లేదా వ్యక్తి",
+    "category": "వర్గం",
+    "noCategory": "సెట్ చేయలేదు",
+    "date": "తేదీ",
+    "today": "ఈరోజు",
+    "note": "గమనిక",
+    "deleteConfirm": "ఈ ఎంట్రీని తొలగించాలా?",
+    "manual": "మీరు జోడించారు"
+  },
+  "me": {
+    "title": "నేను",
+    "language": "భాష",
+    "trialActive": "Pro ట్రయల్: {{count}} రోజులు మిగిలాయి",
+    "trialEnded": "మీ Pro ట్రయల్ ముగిసింది",
+    "version": "వెర్షన్ {{version}}"
+  },
+  "placeholder": {
+    "budgets": "వర్గాల వారీ బడ్జెట్‌లు, వేగ హెచ్చరికలు త్వరలో వస్తున్నాయి.",
+    "bills": "బిల్లులు, EMI, సబ్‌స్క్రిప్షన్‌లు త్వరలో వస్తున్నాయి.",
+    "insights": "ఖర్చు నివేదికలు త్వరలో వస్తున్నాయి."
+  },
+  "category": {
+    "groceries": "కిరాణా",
+    "food_delivery": "ఫుడ్ డెలివరీ",
+    "dining": "బయట భోజనం",
+    "fuel": "ఇంధనం",
+    "transport": "రవాణా",
+    "rent": "అద్దె",
+    "emi": "EMI",
+    "utilities": "కరెంటు & నీళ్లు",
+    "mobile_internet": "మొబైల్ & ఇంటర్నెట్",
+    "health": "ఆరోగ్యం",
+    "education": "చదువు",
+    "insurance": "బీమా",
+    "shopping": "షాపింగ్",
+    "entertainment": "వినోదం",
+    "subscriptions": "సబ్‌స్క్రిప్షన్‌లు",
+    "travel": "ప్రయాణం",
+    "personal_care": "వ్యక్తిగత సంరక్షణ",
+    "gifts": "బహుమతులు",
+    "savings_investments": "పొదుపు & పెట్టుబడులు",
+    "salary": "జీతం",
+    "other_income": "ఇతర ఆదాయం",
+    "other": "ఇతర"
+  }
+}

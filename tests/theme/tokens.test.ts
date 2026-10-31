@@ -22,3 +22,9 @@ test('each language gets a font for its script', () => {
   expect(fontFor('mr', 'regular')).toBe('NotoSansDevanagari_400Regular');
   expect(fontFor('bn', 'bold')).toBe('NotoSansBengali_700Bold');
 });
+
+test('every font a language can ask for is bundled', () => {
+  const { FONT_MAP } = require('@/theme/fonts');
+  const langs = ['en', 'hi', 'ta', 'te', 'kn', 'ml', 'mr', 'bn', 'gu'] as const;
+  for (const l of langs) for (const w of ['regular', 'bold'] as const) expect(FONT_MAP[fontFor(l, w)]).toBeDefined();
+});

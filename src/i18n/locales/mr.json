@@ -1,0 +1,111 @@
+{
+  "_review": "needs native speaker review",
+  "common": {
+    "save": "सेव्ह करा",
+    "delete": "काढून टाका",
+    "cancel": "रद्द करा",
+    "continue": "पुढे जा",
+    "comingSoon": "लवकरच येत आहे"
+  },
+  "errors": {
+    "amount": {
+      "empty": "रक्कम टाका",
+      "invalid": "योग्य रक्कम टाका, उदा. 1,250.50",
+      "zero": "रक्कम ₹0 पेक्षा जास्त असावी",
+      "too_large": "ही रक्कम खूप मोठी आहे"
+    },
+    "merchant": "कोणाला पैसे दिले ते टाका"
+  },
+  "onboarding": {
+    "language": {
+      "title": "तुमची भाषा निवडा",
+      "subtitle": "तुम्ही हे कधीही 'मी' मध्ये बदलू शकता."
+    },
+    "budget": {
+      "title": "तुमचा पैशांचा महिना",
+      "paydayLabel": "पगार मिळण्याचा दिवस",
+      "paydayHint": "दर महिन्याला याच दिवशी तुमचे बजेट पुन्हा सुरू होईल.",
+      "budgetLabel": "मासिक बजेट",
+      "budgetHint": "एका महिन्यात तुम्ही किती खर्च करायचे ठरवता."
+    },
+    "start": {
+      "title": "15 दिवस Pro, मोफत.",
+      "subtitle": "कार्डची गरज नाही. सर्व काही अनलॉक.",
+      "cta": "सुरू करा"
+    }
+  },
+  "tabs": {
+    "home": "होम",
+    "activity": "व्यवहार",
+    "budgets": "बजेट",
+    "bills": "बिले",
+    "insights": "अहवाल"
+  },
+  "home": {
+    "left": "या महिन्यात शिल्लक",
+    "leftOf": "{{total}} पैकी {{left}} शिल्लक",
+    "over": "बजेटपेक्षा {{amount}} जास्त",
+    "day": "दिवस {{day}}/{{length}}",
+    "addSpend": "खर्च जोडा",
+    "recent": "अलीकडील",
+    "toCategorise": "प्रकार निवडायचा: {{count}}",
+    "empty": "अजून खर्च नाही. पहिला खर्च जोडा."
+  },
+  "activity": {
+    "title": "व्यवहार",
+    "uncategorised": "प्रकार निवडायचा",
+    "empty": "अजून इथे काही नाही."
+  },
+  "tx": {
+    "newTitle": "खर्च जोडा",
+    "editTitle": "नोंद बदला",
+    "amount": "रक्कम",
+    "debit": "खर्च केले",
+    "credit": "मिळाले",
+    "merchant": "कोणाला दिले",
+    "merchantPlaceholder": "दुकान किंवा व्यक्ती",
+    "category": "प्रकार",
+    "noCategory": "ठरवलेले नाही",
+    "date": "तारीख",
+    "today": "आज",
+    "note": "टीप",
+    "deleteConfirm": "ही नोंद काढून टाकायची?",
+    "manual": "तुम्ही जोडले"
+  },
+  "me": {
+    "title": "मी",
+    "language": "भाषा",
+    "trialActive": "Pro ट्रायल: {{count}} दिवस शिल्लक",
+    "trialEnded": "तुमचा Pro ट्रायल संपला आहे",
+    "version": "आवृत्ती {{version}}"
+  },
+  "placeholder": {
+    "budgets": "प्रकारनिहाय बजेट आणि वेग सूचना लवकरच येत आहेत.",
+    "bills": "बिले, EMI आणि सबस्क्रिप्शन लवकरच येत आहेत.",
+    "insights": "खर्चाचे अहवाल लवकरच येत आहेत."
+  },
+  "category": {
+    "groceries": "किराणा",
+    "food_delivery": "फूड डिलिव्हरी",
+    "dining": "बाहेर जेवण",
+    "fuel": "इंधन",
+    "transport": "प्रवास खर्च",
+    "rent": "भाडे",
+    "emi": "EMI",
+    "utilities": "वीज आणि पाणी",
+    "mobile_internet": "मोबाइल आणि इंटरनेट",
+    "health": "आरोग्य",
+    "education": "शिक्षण",
+    "insurance": "विमा",
+    "shopping": "खरेदी",
+    "entertainment": "मनोरंजन",
+    "subscriptions": "सबस्क्रिप्शन",
+    "travel": "सहल",
+    "personal_care": "वैयक्तिक काळजी",
+    "gifts": "भेटवस्तू",
+    "savings_investments": "बचत आणि गुंतवणूक",
+    "salary": "पगार",
+    "other_income": "इतर उत्पन्न",
+    "other": "इतर"
+  }
+}

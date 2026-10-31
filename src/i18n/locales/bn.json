@@ -1,0 +1,111 @@
+{
+  "_review": "needs native speaker review",
+  "common": {
+    "save": "সেভ করুন",
+    "delete": "মুছে দিন",
+    "cancel": "বাতিল",
+    "continue": "এগিয়ে যান",
+    "comingSoon": "শীঘ্রই আসছে"
+  },
+  "errors": {
+    "amount": {
+      "empty": "পরিমাণ লিখুন",
+      "invalid": "সঠিক পরিমাণ লিখুন, যেমন 1,250.50",
+      "zero": "পরিমাণ ₹0-এর বেশি হতে হবে",
+      "too_large": "এই পরিমাণটি খুব বেশি"
+    },
+    "merchant": "কাকে টাকা দিলেন লিখুন"
+  },
+  "onboarding": {
+    "language": {
+      "title": "আপনার ভাষা বেছে নিন",
+      "subtitle": "আপনি যেকোনো সময় 'আমি' থেকে এটি বদলাতে পারবেন।"
+    },
+    "budget": {
+      "title": "আপনার টাকার মাস",
+      "paydayLabel": "বেতন পাওয়ার দিন",
+      "paydayHint": "প্রতি মাসে এই দিনে আপনার বাজেট নতুন করে শুরু হবে।",
+      "budgetLabel": "মাসিক বাজেট",
+      "budgetHint": "এক মাসে আপনি কত খরচ করতে চান।"
+    },
+    "start": {
+      "title": "১৫ দিন Pro, বিনামূল্যে।",
+      "subtitle": "কোনো কার্ড লাগবে না। সব কিছু খোলা।",
+      "cta": "শুরু করুন"
+    }
+  },
+  "tabs": {
+    "home": "হোম",
+    "activity": "লেনদেন",
+    "budgets": "বাজেট",
+    "bills": "বিল",
+    "insights": "রিপোর্ট"
+  },
+  "home": {
+    "left": "এই মাসে বাকি",
+    "leftOf": "{{total}}-এর মধ্যে {{left}} বাকি",
+    "over": "বাজেটের চেয়ে {{amount}} বেশি",
+    "day": "দিন {{day}}/{{length}}",
+    "addSpend": "খরচ যোগ করুন",
+    "recent": "সাম্প্রতিক",
+    "toCategorise": "বিভাগ বাছতে হবে: {{count}}",
+    "empty": "এখনও কোনো খরচ নেই। প্রথম খরচ যোগ করুন।"
+  },
+  "activity": {
+    "title": "লেনদেন",
+    "uncategorised": "বিভাগ বাছতে হবে",
+    "empty": "এখানে এখনও কিছু নেই।"
+  },
+  "tx": {
+    "newTitle": "খরচ যোগ করুন",
+    "editTitle": "এন্ট্রি বদলান",
+    "amount": "পরিমাণ",
+    "debit": "খরচ হয়েছে",
+    "credit": "পেয়েছি",
+    "merchant": "কাকে দিলেন",
+    "merchantPlaceholder": "দোকান বা ব্যক্তি",
+    "category": "বিভাগ",
+    "noCategory": "ঠিক করা নেই",
+    "date": "তারিখ",
+    "today": "আজ",
+    "note": "নোট",
+    "deleteConfirm": "এই এন্ট্রি মুছে দেবেন?",
+    "manual": "আপনি যোগ করেছেন"
+  },
+  "me": {
+    "title": "আমি",
+    "language": "ভাষা",
+    "trialActive": "Pro ট্রায়াল: {{count}} দিন বাকি",
+    "trialEnded": "আপনার Pro ট্রায়াল শেষ হয়েছে",
+    "version": "সংস্করণ {{version}}"
+  },
+  "placeholder": {
+    "budgets": "বিভাগ অনুযায়ী বাজেট ও গতির সতর্কতা শীঘ্রই আসছে।",
+    "bills": "বিল, EMI ও সাবস্ক্রিপশন শীঘ্রই আসছে।",
+    "insights": "খরচের রিপোর্ট শীঘ্রই আসছে।"
+  },
+  "category": {
+    "groceries": "মুদি",
+    "food_delivery": "খাবার ডেলিভারি",
+    "dining": "বাইরে খাওয়া",
+    "fuel": "জ্বালানি",
+    "transport": "যাতায়াত",
+    "rent": "ভাড়া",
+    "emi": "EMI",
+    "utilities": "বিদ্যুৎ ও জল",
+    "mobile_internet": "মোবাইল ও ইন্টারনেট",
+    "health": "স্বাস্থ্য",
+    "education": "পড়াশোনা",
+    "insurance": "বিমা",
+    "shopping": "কেনাকাটা",
+    "entertainment": "বিনোদন",
+    "subscriptions": "সাবস্ক্রিপশন",
+    "travel": "ভ্রমণ",
+    "personal_care": "ব্যক্তিগত যত্ন",
+    "gifts": "উপহার",
+    "savings_investments": "সঞ্চয় ও বিনিয়োগ",
+    "salary": "বেতন",
+    "other_income": "অন্যান্য আয়",
+    "other": "অন্যান্য"
+  }
+}

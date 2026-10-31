@@ -1,0 +1,111 @@
+{
+  "_review": "needs native speaker review",
+  "common": {
+    "save": "ಉಳಿಸಿ",
+    "delete": "ಅಳಿಸಿ",
+    "cancel": "ರದ್ದು",
+    "continue": "ಮುಂದುವರಿಸಿ",
+    "comingSoon": "ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ"
+  },
+  "errors": {
+    "amount": {
+      "empty": "ಮೊತ್ತ ನಮೂದಿಸಿ",
+      "invalid": "ಸರಿಯಾದ ಮೊತ್ತ ನಮೂದಿಸಿ, ಉದಾ. 1,250.50",
+      "zero": "ಮೊತ್ತ ₹0 ಕ್ಕಿಂತ ಹೆಚ್ಚಿರಬೇಕು",
+      "too_large": "ಈ ಮೊತ್ತ ತುಂಬಾ ದೊಡ್ಡದು"
+    },
+    "merchant": "ಯಾರಿಗೆ ಪಾವತಿಸಿದಿರಿ ಎಂದು ನಮೂದಿಸಿ"
+  },
+  "onboarding": {
+    "language": {
+      "title": "ನಿಮ್ಮ ಭಾಷೆ ಆಯ್ಕೆಮಾಡಿ",
+      "subtitle": "ಇದನ್ನು ಯಾವಾಗ ಬೇಕಾದರೂ 'ನಾನು' ನಲ್ಲಿ ಬದಲಿಸಬಹುದು."
+    },
+    "budget": {
+      "title": "ನಿಮ್ಮ ಹಣದ ತಿಂಗಳು",
+      "paydayLabel": "ಸಂಬಳ ಬರುವ ದಿನ",
+      "paydayHint": "ಪ್ರತಿ ತಿಂಗಳು ಈ ದಿನ ನಿಮ್ಮ ಬಜೆಟ್ ಮತ್ತೆ ಆರಂಭವಾಗುತ್ತದೆ.",
+      "budgetLabel": "ತಿಂಗಳ ಬಜೆಟ್",
+      "budgetHint": "ಒಂದು ತಿಂಗಳಲ್ಲಿ ನೀವು ಎಷ್ಟು ಖರ್ಚು ಮಾಡಲು ಯೋಜಿಸಿದ್ದೀರಿ."
+    },
+    "start": {
+      "title": "15 ದಿನ Pro, ಉಚಿತ.",
+      "subtitle": "ಕಾರ್ಡ್ ಬೇಕಿಲ್ಲ. ಎಲ್ಲವೂ ಅನ್‌ಲಾಕ್.",
+      "cta": "ಆರಂಭಿಸಿ"
+    }
+  },
+  "tabs": {
+    "home": "ಮುಖಪುಟ",
+    "activity": "ವಹಿವಾಟು",
+    "budgets": "ಬಜೆಟ್",
+    "bills": "ಬಿಲ್‌ಗಳು",
+    "insights": "ವರದಿ"
+  },
+  "home": {
+    "left": "ಈ ತಿಂಗಳು ಉಳಿದಿದೆ",
+    "leftOf": "{{total}} ರಲ್ಲಿ {{left}} ಉಳಿದಿದೆ",
+    "over": "ಬಜೆಟ್‌ಗಿಂತ {{amount}} ಹೆಚ್ಚು",
+    "day": "ದಿನ {{day}}/{{length}}",
+    "addSpend": "ಖರ್ಚು ಸೇರಿಸಿ",
+    "recent": "ಇತ್ತೀಚಿನವು",
+    "toCategorise": "ವರ್ಗ ಆಯ್ಕೆ ಬಾಕಿ: {{count}}",
+    "empty": "ಇನ್ನೂ ಖರ್ಚುಗಳಿಲ್ಲ. ಮೊದಲ ಖರ್ಚು ಸೇರಿಸಿ."
+  },
+  "activity": {
+    "title": "ವಹಿವಾಟು",
+    "uncategorised": "ವರ್ಗ ಆಯ್ಕೆ ಬಾಕಿ",
+    "empty": "ಇಲ್ಲಿ ಇನ್ನೂ ಏನೂ ಇಲ್ಲ."
+  },
+  "tx": {
+    "newTitle": "ಖರ್ಚು ಸೇರಿಸಿ",
+    "editTitle": "ನಮೂದು ಬದಲಿಸಿ",
+    "amount": "ಮೊತ್ತ",
+    "debit": "ಖರ್ಚಾಗಿದೆ",
+    "credit": "ಬಂದಿದೆ",
+    "merchant": "ಯಾರಿಗೆ",
+    "merchantPlaceholder": "ಅಂಗಡಿ ಅಥವಾ ವ್ಯಕ್ತಿ",
+    "category": "ವರ್ಗ",
+    "noCategory": "ಹೊಂದಿಸಿಲ್ಲ",
+    "date": "ದಿನಾಂಕ",
+    "today": "ಇಂದು",
+    "note": "ಟಿಪ್ಪಣಿ",
+    "deleteConfirm": "ಈ ನಮೂದನ್ನು ಅಳಿಸಬೇಕೆ?",
+    "manual": "ನೀವು ಸೇರಿಸಿದ್ದು"
+  },
+  "me": {
+    "title": "ನಾನು",
+    "language": "ಭಾಷೆ",
+    "trialActive": "Pro ಟ್ರಯಲ್: {{count}} ದಿನ ಉಳಿದಿದೆ",
+    "trialEnded": "ನಿಮ್ಮ Pro ಟ್ರಯಲ್ ಮುಗಿದಿದೆ",
+    "version": "ಆವೃತ್ತಿ {{version}}"
+  },
+  "placeholder": {
+    "budgets": "ವರ್ಗವಾರು ಬಜೆಟ್ ಮತ್ತು ವೇಗ ಎಚ್ಚರಿಕೆಗಳು ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿವೆ.",
+    "bills": "ಬಿಲ್‌ಗಳು, EMI ಮತ್ತು ಚಂದಾದಾರಿಕೆಗಳು ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿವೆ.",
+    "insights": "ಖರ್ಚಿನ ವರದಿಗಳು ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿವೆ."
+  },
+  "category": {
+    "groceries": "ದಿನಸಿ",
+    "food_delivery": "ಆಹಾರ ಡೆಲಿವರಿ",
+    "dining": "ಹೊರಗೆ ಊಟ",
+    "fuel": "ಇಂಧನ",
+    "transport": "ಸಾರಿಗೆ",
+    "rent": "ಬಾಡಿಗೆ",
+    "emi": "EMI",
+    "utilities": "ವಿದ್ಯುತ್ ಮತ್ತು ನೀರು",
+    "mobile_internet": "ಮೊಬೈಲ್ ಮತ್ತು ಇಂಟರ್ನೆಟ್",
+    "health": "ಆರೋಗ್ಯ",
+    "education": "ಶಿಕ್ಷಣ",
+    "insurance": "ವಿಮೆ",
+    "shopping": "ಶಾಪಿಂಗ್",
+    "entertainment": "ಮನರಂಜನೆ",
+    "subscriptions": "ಚಂದಾದಾರಿಕೆಗಳು",
+    "travel": "ಪ್ರವಾಸ",
+    "personal_care": "ವೈಯಕ್ತಿಕ ಆರೈಕೆ",
+    "gifts": "ಉಡುಗೊರೆಗಳು",
+    "savings_investments": "ಉಳಿತಾಯ ಮತ್ತು ಹೂಡಿಕೆ",
+    "salary": "ಸಂಬಳ",
+    "other_income": "ಇತರ ಆದಾಯ",
+    "other": "ಇತರೆ"
+  }
+}

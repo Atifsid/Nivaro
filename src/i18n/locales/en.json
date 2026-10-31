@@ -1,0 +1,110 @@
+{
+  "common": {
+    "save": "Save",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "continue": "Continue",
+    "comingSoon": "Coming soon"
+  },
+  "errors": {
+    "amount": {
+      "empty": "Enter an amount",
+      "invalid": "Enter a valid amount, like 1,250.50",
+      "zero": "Amount must be more than ₹0",
+      "too_large": "That amount is too large"
+    },
+    "merchant": "Enter who you paid"
+  },
+  "onboarding": {
+    "language": {
+      "title": "Choose your language",
+      "subtitle": "You can change this any time in Me."
+    },
+    "budget": {
+      "title": "Your money month",
+      "paydayLabel": "Day you get paid",
+      "paydayHint": "Your budget restarts on this day every month.",
+      "budgetLabel": "Monthly budget",
+      "budgetHint": "What you plan to spend in one month."
+    },
+    "start": {
+      "title": "15 days of Pro, free.",
+      "subtitle": "No card needed. Everything unlocked.",
+      "cta": "Start"
+    }
+  },
+  "tabs": {
+    "home": "Home",
+    "activity": "Activity",
+    "budgets": "Budgets",
+    "bills": "Bills",
+    "insights": "Insights"
+  },
+  "home": {
+    "left": "Left this month",
+    "leftOf": "{{left}} left of {{total}}",
+    "over": "Over budget by {{amount}}",
+    "day": "Day {{day}}/{{length}}",
+    "addSpend": "Add spend",
+    "recent": "Recent",
+    "toCategorise": "To categorise: {{count}}",
+    "empty": "No spends yet. Add your first one."
+  },
+  "activity": {
+    "title": "Activity",
+    "uncategorised": "To categorise",
+    "empty": "Nothing here yet."
+  },
+  "tx": {
+    "newTitle": "Add spend",
+    "editTitle": "Edit entry",
+    "amount": "Amount",
+    "debit": "Spent",
+    "credit": "Received",
+    "merchant": "Paid to",
+    "merchantPlaceholder": "Shop or person",
+    "category": "Category",
+    "noCategory": "Not set",
+    "date": "Date",
+    "today": "Today",
+    "note": "Note",
+    "deleteConfirm": "Delete this entry?",
+    "manual": "Added by you"
+  },
+  "me": {
+    "title": "Me",
+    "language": "Language",
+    "trialActive": "Pro trial: {{count}} days left",
+    "trialEnded": "Your Pro trial has ended",
+    "version": "Version {{version}}"
+  },
+  "placeholder": {
+    "budgets": "Category budgets and pace alerts are on the way.",
+    "bills": "Bills, EMIs and subscriptions are on the way.",
+    "insights": "Spending reports are on the way."
+  },
+  "category": {
+    "groceries": "Groceries",
+    "food_delivery": "Food delivery",
+    "dining": "Eating out",
+    "fuel": "Fuel",
+    "transport": "Transport",
+    "rent": "Rent",
+    "emi": "EMI",
+    "utilities": "Electricity & water",
+    "mobile_internet": "Mobile & internet",
+    "health": "Health",
+    "education": "Education",
+    "insurance": "Insurance",
+    "shopping": "Shopping",
+    "entertainment": "Entertainment",
+    "subscriptions": "Subscriptions",
+    "travel": "Travel",
+    "personal_care": "Personal care",
+    "gifts": "Gifts",
+    "savings_investments": "Savings & investments",
+    "salary": "Salary",
+    "other_income": "Other income",
+    "other": "Other"
+  }
+}
