@@ -1,12 +1,11 @@
 import Constants from 'expo-constants';
-import { router, useFocusEffect } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { useDb } from '@/db/DbProvider';
 import type { Lang } from '@/db/types';
-import { trialStatus, type TrialStatus } from '@/domain/trial';
+import { trialStatus } from '@/domain/trial';
 import { useSettings } from '@/features/settings/SettingsProvider';
 import { LANGUAGES, setLanguage } from '@/i18n';
 import { colors, fontFor, space, type } from '@/theme/tokens';
@@ -18,16 +17,10 @@ export default function Me() {
   const { t, i18n } = useTranslation();
   const db = useDb();
   const { settings, update } = useSettings();
-  const [trial, setTrial] = useState<TrialStatus | null>(null);
-
-  useFocusEffect(
-    useCallback(() => {
-      if (settings.firstLaunchAt === null) return;
-      const status = trialStatus(settings.firstLaunchAt, settings.lastSeenAt ?? settings.firstLaunchAt, Date.now());
-      setTrial(status);
-      if (status.effectiveNow !== settings.lastSeenAt) update({ lastSeenAt: status.effectiveNow });
-    }, [settings.firstLaunchAt, settings.lastSeenAt, update]),
-  );
+  const trial =
+    settings.firstLaunchAt === null
+      ? null
+      : trialStatus(settings.firstLaunchAt, settings.lastSeenAt ?? settings.firstLaunchAt, Date.now());
 
   const choose = async (code: Lang) => {
     await setLanguage(db, code);

@@ -22,7 +22,12 @@ export async function getSettings(db: Db): Promise<AppSettings> {
   const rows = await db.all<{ key: string; value: string }>('SELECT key, value FROM settings');
   const out: Record<string, unknown> = { ...DEFAULTS };
   for (const { key, value } of rows) {
-    if (key in DEFAULTS) out[key] = JSON.parse(value);
+    if (!(key in DEFAULTS)) continue;
+    try {
+      out[key] = JSON.parse(value);
+    } catch {
+      out[key] = DEFAULTS[key as keyof AppSettings];
+    }
   }
   return out as AppSettings;
 }

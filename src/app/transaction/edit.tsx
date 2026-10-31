@@ -20,6 +20,7 @@ import { Field } from '@/ui/Field';
 import { Label, Title } from '@/ui/Label';
 import { PopButton } from '@/ui/PopButton';
 import { Screen } from '@/ui/Screen';
+import { useSubmitGuard } from '@/ui/useSubmitGuard';
 
 const DAY = 86_400_000;
 
@@ -42,6 +43,7 @@ export default function EditTransaction() {
   const [occurredAt, setOccurredAt] = useState(Date.now());
   const [note, setNote] = useState('');
   const [errors, setErrors] = useState<{ amount?: string; merchant?: string }>({});
+  const { run, busy } = useSubmitGuard();
 
   useEffect(() => {
     listCategories(db).then(setCategories);
@@ -65,24 +67,25 @@ export default function EditTransaction() {
     if (next <= Date.now()) setOccurredAt(next);
   };
 
-  const save = async () => {
-    const result = validateTxForm({ amount, merchant });
-    if (!result.ok) {
-      setErrors(result.errors);
-      return;
-    }
-    const fields = {
-      amountPaise: result.amountPaise,
-      direction,
-      merchant: result.merchant,
-      categoryId,
-      note: note.trim() || null,
-      occurredAt,
-    };
-    if (id) await updateTransaction(db, id, fields);
-    else await addTransaction(db, { ...fields, source: 'manual' });
-    router.back();
-  };
+  const save = () =>
+    run(async () => {
+      const result = validateTxForm({ amount, merchant });
+      if (!result.ok) {
+        setErrors(result.errors);
+        return;
+      }
+      const fields = {
+        amountPaise: result.amountPaise,
+        direction,
+        merchant: result.merchant,
+        categoryId,
+        note: note.trim() || null,
+        occurredAt,
+      };
+      if (id) await updateTransaction(db, id, fields);
+      else await addTransaction(db, { ...fields, source: 'manual' });
+      router.back();
+    });
 
   const remove = () => {
     if (!id) return;
@@ -91,10 +94,11 @@ export default function EditTransaction() {
       {
         text: t('common.delete'),
         style: 'destructive',
-        onPress: async () => {
-          await softDeleteTransaction(db, id);
-          router.back();
-        },
+        onPress: () =>
+          run(async () => {
+            await softDeleteTransaction(db, id);
+            router.back();
+          }),
       },
     ]);
   };
@@ -103,12 +107,16 @@ export default function EditTransaction() {
     <Screen
       footer={
         <View style={styles.footer}>
-          <PopButton label={t('common.save')} onPress={save} />
-          {id ? <PopButton label={t('common.delete')} variant="secondary" onPress={remove} /> : null}
+          <PopButton label={t('common.save')} onPress={save} disabled={busy} />
+          {id ? <PopButton label={t('common.delete')} variant="secondary" onPress={remove} disabled={busy} /> : null}
         </View>
       }>
       <View style={styles.top}>
-        <Pressable accessibilityRole="button" accessibilityLabel={t('common.cancel')} onPress={() => router.back()} hitSlop={12}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel={t('common.cancel')}
+          onPress={() => router.back()}
+          hitSlop={12}>
           <Text style={[styles.close, { fontFamily: font }]}>✕</Text>
         </Pressable>
         <Title>{id ? t('tx.editTitle') : t('tx.newTitle')}</Title>
@@ -182,7 +190,11 @@ export default function EditTransaction() {
       <View style={styles.section}>
         <Label>{t('tx.date')}</Label>
         <View style={styles.dateRow}>
-          <Pressable accessibilityRole="button" accessibilityLabel="-1" onPress={() => shiftDay(-1)} style={styles.dateBtn}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="-1"
+            onPress={() => shiftDay(-1)}
+            style={styles.dateBtn}>
             <Text style={[styles.dateArrow, { fontFamily: font }]}>‹</Text>
           </Pressable>
           <Text style={[styles.dateText, { fontFamily: font }]}>
@@ -208,18 +220,32 @@ const styles = StyleSheet.create({
   top: { flexDirection: 'row', alignItems: 'center', gap: space.md },
   close: { ...type.title, color: colors.textMuted },
   footer: { gap: space.sm },
-  toggle: { flexDirection: 'row', borderWidth: 1, borderColor: colors.hairline },
+  toggle: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
   toggleItem: { flex: 1, paddingVertical: space.md, alignItems: 'center' },
   toggleActive: { backgroundColor: colors.text },
   toggleText: { ...type.body, color: colors.textMuted },
   toggleTextActive: { color: colors.bg },
   section: { gap: space.sm },
   chips: { flexDirection: 'row', flexWrap: 'wrap', gap: space.sm },
-  chip: { borderWidth: 1, borderColor: colors.hairline, paddingHorizontal: space.md, paddingVertical: space.sm },
+  chip: {
+    borderWidth: 1,
+    borderColor: colors.hairline,
+    paddingHorizontal: space.md,
+    paddingVertical: space.sm,
+  },
   chipActive: { backgroundColor: colors.accent, borderColor: colors.accent },
   chipText: { ...type.small, color: colors.text },
   chipTextActive: { color: colors.onAccent },
-  dateRow: { flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: colors.hairline },
+  dateRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: colors.hairline,
+  },
   dateBtn: { paddingHorizontal: space.lg, paddingVertical: space.md },
   dateArrow: { ...type.title, color: colors.accent },
   dateText: { ...type.body, color: colors.text, flex: 1, textAlign: 'center' },
