@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { Animated, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { colors, POP_OFFSET, space, type } from '@/theme/tokens';
-import { useFont } from '@/theme/useFont';
+import { useFont, useIsLatin } from '@/theme/useFont';
 
 import { useReduceMotion } from './useReduceMotion';
 
@@ -16,6 +16,7 @@ type Props = {
 
 export function PopButton({ label, onPress, variant = 'primary', disabled = false }: Props) {
   const font = useFont('bold');
+  const latin = useIsLatin();
   const reduceMotion = useReduceMotion();
   const offset = useRef(new Animated.Value(0)).current;
   const primary = variant === 'primary';
@@ -46,7 +47,7 @@ export function PopButton({ label, onPress, variant = 'primary', disabled = fals
           numberOfLines={2}
           adjustsFontSizeToFit
           minimumFontScale={0.8}
-          style={[styles.label, { fontFamily: font, color: primary ? colors.onAccent : colors.text }]}>
+          style={[styles.label, { fontFamily: font, letterSpacing: latin ? 0.5 : 0, color: primary ? colors.onAccent : colors.text }]}>
           {label}
         </Text>
       </Animated.View>
@@ -60,6 +61,6 @@ const styles = StyleSheet.create({
   face: { minHeight: 48, paddingHorizontal: space.lg, paddingVertical: space.md, justifyContent: 'center' },
   primary: { backgroundColor: colors.accent },
   secondary: { backgroundColor: colors.surface, borderWidth: 1, borderColor: colors.hairline },
-  label: { ...type.body, textAlign: 'center', letterSpacing: 0.5 },
+  label: { ...type.body, textAlign: 'center' },
   disabled: { opacity: 0.4 },
 });

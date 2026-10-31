@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { StyleSheet, View } from 'react-native';
 
 import { useSettings } from '@/features/settings/SettingsProvider';
-import { colors, space, type } from '@/theme/tokens';
+import { colors, fontFor, space, type } from '@/theme/tokens';
 import { Body, Title } from '@/ui/Label';
 import { PopButton } from '@/ui/PopButton';
 import { Screen } from '@/ui/Screen';
@@ -26,7 +26,7 @@ export default function StartStep() {
     <Screen scroll={false} footer={<PopButton label={t('onboarding.start.cta')} onPress={start} />}>
       <View style={styles.center}>
         <View style={styles.badge}>
-          <Title style={styles.badgeText}>PRO</Title>
+          <Title style={[styles.badgeText, { fontFamily: fontFor('en', 'bold') }]}>PRO</Title>
         </View>
         <Title style={styles.title}>{t('onboarding.start.title')}</Title>
         <Body muted>{t('onboarding.start.subtitle')}</Body>

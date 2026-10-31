@@ -2,6 +2,7 @@ import { migrate } from '@/db/migrations';
 import {
   addTransaction,
   cycleSpendPaise,
+  getTransaction,
   listTransactions,
   softDeleteTransaction,
   updateTransaction,
@@ -58,4 +59,13 @@ test('update changes fields and hides deleted rows from lists', async () => {
   await expect(updateTransaction(db, id, { amountPaise: 0 })).rejects.toThrow();
   await softDeleteTransaction(db, id);
   expect(await listTransactions(db, {})).toEqual([]);
+});
+
+test('getTransaction returns one live row or null', async () => {
+  const { db, ids } = await setup();
+  const id = await addTransaction(db, base, ids);
+  expect(await getTransaction(db, id)).toMatchObject({ id, merchant: 'Swiggy', amountPaise: 41200 });
+  expect(await getTransaction(db, 'missing')).toBeNull();
+  await softDeleteTransaction(db, id);
+  expect(await getTransaction(db, id)).toBeNull();
 });

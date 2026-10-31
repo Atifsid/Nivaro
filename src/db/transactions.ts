@@ -113,3 +113,7 @@ export async function cycleSpendPaise(db: Db, from: number, to: number): Promise
   );
   return row?.total ?? 0;
 }
+
+export async function getTransaction(db: Db, id: string): Promise<Transaction | null> {
+  return db.first<Transaction>(`${SELECT} AND id = ?`, [id]);
+}

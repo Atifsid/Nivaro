@@ -15,3 +15,8 @@ export function useFont(weight: 'regular' | 'bold'): string {
 export function useNumberFont(): string {
   return fontFor('en', 'bold');
 }
+
+export function useIsLatin(): boolean {
+  const { i18n } = useTranslation();
+  return !i18n?.language || i18n.language === 'en';
+}

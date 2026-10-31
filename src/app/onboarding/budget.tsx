@@ -13,6 +13,7 @@ import { PopButton } from '@/ui/PopButton';
 import { Screen } from '@/ui/Screen';
 
 const DAYS = Array.from({ length: 31 }, (_, i) => i + 1);
+const WEEKS = Array.from({ length: 5 }, (_, w) => DAYS.slice(w * 7, w * 7 + 7));
 
 export default function BudgetStep() {
   const { t } = useTranslation();
@@ -38,20 +39,29 @@ export default function BudgetStep() {
       <View style={styles.section}>
         <Label>{t('onboarding.budget.paydayLabel')}</Label>
         <View style={styles.grid}>
-          {DAYS.map((d) => {
-            const active = d === payday;
-            return (
-              <Pressable
-                key={d}
-                accessibilityRole="button"
-                accessibilityState={{ selected: active }}
-                accessibilityLabel={`${t('onboarding.budget.paydayLabel')} ${d}`}
-                onPress={() => setPayday(d)}
-                style={[styles.day, active && styles.dayActive]}>
-                <Text style={[styles.dayText, { fontFamily: numberFont }, active && styles.dayTextActive]}>{d}</Text>
-              </Pressable>
-            );
-          })}
+          {WEEKS.map((week, wi) => (
+            <View key={wi} style={styles.week}>
+              {week.map((d) => {
+                const active = d === payday;
+                return (
+                  <Pressable
+                    key={d}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected: active }}
+                    accessibilityLabel={`${t('onboarding.budget.paydayLabel')} ${d}`}
+                    onPress={() => setPayday(d)}
+                    style={[styles.day, active && styles.dayActive]}>
+                    <Text style={[styles.dayText, { fontFamily: numberFont }, active && styles.dayTextActive]}>
+                      {d}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+              {Array.from({ length: 7 - week.length }, (_, i) => (
+                <View key={`f${i}`} style={styles.filler} />
+              ))}
+            </View>
+          ))}
         </View>
         <Body muted style={styles.hint}>
           {t('onboarding.budget.paydayHint')}
@@ -80,9 +90,11 @@ export default function BudgetStep() {
 const styles = StyleSheet.create({
   title: { marginTop: space.lg },
   section: { gap: space.sm },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', gap: space.xs },
+  grid: { gap: space.xs },
+  week: { flexDirection: 'row', gap: space.xs },
+  filler: { flex: 1, borderWidth: 1, borderColor: 'transparent' },
   day: {
-    width: '13.2%',
+    flex: 1,
     aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center',
