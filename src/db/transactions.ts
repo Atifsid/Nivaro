@@ -1,5 +1,6 @@
 import { randomUUID } from 'expo-crypto';
 
+import { rememberMerchant } from './merchants';
 import type { Db } from './types';
 
 export type Direction = 'debit' | 'credit';
@@ -14,12 +15,16 @@ export type NewTransaction = {
   instrument?: string | null;
   source: Source;
   occurredAt: number;
+  ref?: string | null;
+  bank?: string | null;
+  merchantKey?: string | null;
 };
 
 export type Transaction = Required<NewTransaction> & { id: string; createdAt: number; updatedAt: number };
 
 const SELECT = `SELECT id, amount_paise AS amountPaise, direction, merchant, note, category_id AS categoryId,
-  instrument, source, occurred_at AS occurredAt, created_at AS createdAt, updated_at AS updatedAt
+  instrument, source, occurred_at AS occurredAt, created_at AS createdAt, updated_at AS updatedAt,
+  ref, bank, merchant_key AS merchantKey
   FROM transactions WHERE deleted_at IS NULL`;
 
 const COLUMNS: Record<keyof NewTransaction, string> = {
@@ -31,6 +36,9 @@ const COLUMNS: Record<keyof NewTransaction, string> = {
   instrument: 'instrument',
   source: 'source',
   occurredAt: 'occurred_at',
+  ref: 'ref',
+  bank: 'bank',
+  merchantKey: 'merchant_key',
 };
 
 function assertAmount(paise: number): void {
@@ -47,7 +55,7 @@ export async function addTransaction(
   const now = Date.now();
   await db.run(
     `INSERT INTO transactions (id, amount_paise, direction, merchant, note, category_id, instrument, source,
-      occurred_at, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      occurred_at, created_at, updated_at, ref, bank, merchant_key) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       id,
       input.amountPaise,
@@ -60,6 +68,9 @@ export async function addTransaction(
       input.occurredAt,
       now,
       now,
+      input.ref ?? null,
+      input.bank ?? null,
+      input.merchantKey ?? null,
     ],
   );
   return id;
@@ -75,6 +86,10 @@ export async function updateTransaction(db: Db, id: string, patch: Partial<NewTr
     Date.now(),
     id,
   ]);
+  if (patch.categoryId) {
+    const row = await db.first<{ merchant_key: string | null }>('SELECT merchant_key FROM transactions WHERE id = ?', [id]);
+    if (row?.merchant_key) await rememberMerchant(db, row.merchant_key, patch.categoryId);
+  }
 }
 
 export async function softDeleteTransaction(db: Db, id: string): Promise<void> {

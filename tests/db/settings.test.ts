@@ -2,11 +2,11 @@ import { migrate } from '@/db/migrations';
 import { getSettings, updateSettings } from '@/db/settings';
 import { nodeDb } from '../helpers/nodeDb';
 
-test('migrate can run twice and sets schema version 1', async () => {
+test('migrate can run twice and sets the latest schema version', async () => {
   const db = nodeDb();
   await migrate(db);
   await migrate(db);
-  expect(await db.first<{ user_version: number }>('PRAGMA user_version')).toEqual({ user_version: 1 });
+  expect(await db.first<{ user_version: number }>('PRAGMA user_version')).toEqual({ user_version: 2 });
 });
 
 test('fresh settings are empty and onboarding is not done', async () => {
