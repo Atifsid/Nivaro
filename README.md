@@ -33,11 +33,25 @@ Android and iPhone, built with React Native and Expo. Data stays on the phone.
 
 Budgets, Bills and Insights tabs are placeholders for now.
 
+## In progress: automatic capture
+
+The logic that turns a bank or UPI alert into a spend is written and tested, but it is not connected to the phone yet.
+
+- It reads amount, debit or credit, shop, card or account (last 4 digits), bank and UPI reference from bank SMS and from Google Pay, PhonePe, Paytm, bank app and Gmail notifications. English and Hindi wording are handled.
+- OTPs, balance messages, offers and personal texts are ignored and never stored.
+- One payment that arrives as a bank SMS, a bank app notification and a UPI app notification is stored once.
+- Once you pick a category for a shop, later spends there get it automatically.
+- Only the parsed details are kept. The message itself is thrown away after reading.
+
+The parser is tested against sample messages written to match common bank formats, not real messages yet.
+
+Still to do for this phase: the Android service that picks up SMS and notifications, the iPhone Shortcuts action, the permission screens, and the category prompt notification.
+
 ## Planned
 
 In order:
 
-1. **Automatic capture.** On Android, read bank SMS and notifications from UPI apps, bank apps and Gmail. On iPhone, use a Shortcuts automation. Remember the category for each shop.
+1. **Finish automatic capture** (see above).
 2. **Budgets and bills.** Per-category limits, warnings before you overspend, "safe to spend today", bills, EMIs and subscriptions with reminders.
 3. **Reports.** Spending by category, shop, card and UPI account. Search and CSV export.
 4. **Accounts and Pro.** Optional sign-in with Google or Apple for backup, and the paid Pro plan.
