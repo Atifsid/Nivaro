@@ -7,6 +7,7 @@ export type AppSettings = {
   firstLaunchAt: number | null;
   lastSeenAt: number | null;
   onboardingDone: boolean;
+  captureSeq: number;
 };
 
 const DEFAULTS: AppSettings = {
@@ -16,6 +17,7 @@ const DEFAULTS: AppSettings = {
   firstLaunchAt: null,
   lastSeenAt: null,
   onboardingDone: false,
+  captureSeq: 0,
 };
 
 export async function getSettings(db: Db): Promise<AppSettings> {

@@ -8,6 +8,7 @@ const fresh: AppSettings = {
   firstLaunchAt: null,
   lastSeenAt: null,
   onboardingDone: false,
+  captureSeq: 0,
 };
 
 test('a fresh install starts with language', () => {

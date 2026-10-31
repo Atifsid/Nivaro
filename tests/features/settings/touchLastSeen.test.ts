@@ -9,6 +9,7 @@ const base: AppSettings = {
   firstLaunchAt: 0,
   lastSeenAt: 0,
   onboardingDone: true,
+  captureSeq: 0,
 };
 
 test('moves lastSeenAt forward when time has passed', () => {

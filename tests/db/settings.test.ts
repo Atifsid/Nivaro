@@ -19,6 +19,7 @@ test('fresh settings are empty and onboarding is not done', async () => {
     firstLaunchAt: null,
     lastSeenAt: null,
     onboardingDone: false,
+    captureSeq: 0,
   });
 });
 
