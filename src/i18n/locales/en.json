@@ -106,5 +106,10 @@
     "salary": "Salary",
     "other_income": "Other income",
     "other": "Other"
+  },
+  "prompt": {
+    "title": "{{amount}} at {{merchant}}",
+    "body": "What was it for?",
+    "skip": "Skip"
   }
 }

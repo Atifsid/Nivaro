@@ -107,5 +107,10 @@
     "salary": "சம்பளம்",
     "other_income": "பிற வருமானம்",
     "other": "மற்றவை"
+  },
+  "prompt": {
+    "title": "{{merchant}}-இல் {{amount}}",
+    "body": "இது எதற்காக?",
+    "skip": "தவிர்"
   }
 }

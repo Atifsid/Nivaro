@@ -107,5 +107,10 @@
     "salary": "జీతం",
     "other_income": "ఇతర ఆదాయం",
     "other": "ఇతర"
+  },
+  "prompt": {
+    "title": "{{merchant}} వద్ద {{amount}}",
+    "body": "ఇది దేనికోసం?",
+    "skip": "దాటవేయి"
   }
 }

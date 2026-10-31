@@ -107,5 +107,10 @@
     "salary": "सैलरी",
     "other_income": "अन्य आमदनी",
     "other": "अन्य"
+  },
+  "prompt": {
+    "title": "{{merchant}} पर {{amount}}",
+    "body": "यह किस लिए था?",
+    "skip": "छोड़ें"
   }
 }

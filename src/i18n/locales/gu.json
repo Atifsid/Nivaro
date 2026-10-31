@@ -107,5 +107,10 @@
     "salary": "પગાર",
     "other_income": "અન્ય આવક",
     "other": "અન્ય"
+  },
+  "prompt": {
+    "title": "{{merchant}} પર {{amount}}",
+    "body": "આ શેના માટે હતું?",
+    "skip": "છોડો"
   }
 }

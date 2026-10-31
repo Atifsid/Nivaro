@@ -107,5 +107,10 @@
     "salary": "ಸಂಬಳ",
     "other_income": "ಇತರ ಆದಾಯ",
     "other": "ಇತರೆ"
+  },
+  "prompt": {
+    "title": "{{merchant}} ನಲ್ಲಿ {{amount}}",
+    "body": "ಇದು ಯಾವುದಕ್ಕಾಗಿ?",
+    "skip": "ಬಿಡಿ"
   }
 }

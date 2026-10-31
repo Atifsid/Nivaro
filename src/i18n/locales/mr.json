@@ -107,5 +107,10 @@
     "salary": "पगार",
     "other_income": "इतर उत्पन्न",
     "other": "इतर"
+  },
+  "prompt": {
+    "title": "{{merchant}} येथे {{amount}}",
+    "body": "हे कशासाठी होते?",
+    "skip": "वगळा"
   }
 }
